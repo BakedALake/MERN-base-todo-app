@@ -18,6 +18,8 @@ export default class TodosList extends Component {
     constructor(props) {
         super(props);
 
+        this.todoList = this.todoList.bind(this);
+
         this.state = { todos: [] };
     }
 
