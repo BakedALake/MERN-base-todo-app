@@ -79,7 +79,7 @@ todoRoutes.route('/update/:id').post(function (req, res) {
 });
 
 // Express router
-app.use('/todos', todoRoutes);
+app.use('/', todoRoutes);
 
 // Listen
 app.listen(PORT, function () {
