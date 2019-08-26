@@ -14,7 +14,11 @@ app.use(cors());
 app.use(bodyParser.json());
 
 // Mongoose connection
-mongoose.connect('mongodb://127.0.0.1:27017/todos', { useNewUrlParser: true });
+var MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/todos";
+
+mongoose.Promise = Promise;
+
+mongoose.connect(MONGODB_URI || "mongodb://localhost/todos");
 const connection = mongoose.connection;
 
 connection.once('open', function () {
